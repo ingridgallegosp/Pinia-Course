@@ -7,8 +7,8 @@ import { useCartStore } from '@/store/CartStore';
 const { products } = useProductStore()
 const { addItem } = useCartStore()
 
-//const productStore = useProductStore()
-//const cartStore = useCartStore()
+const productStore = useProductStore()
+const cartStore = useCartStore()
 
 /* Added to CartStore methods
 const addToCart = (count, product) => {
@@ -32,7 +32,7 @@ const addToCart = (count, product) => {
         v-for="product in products"
         :key="product.name"
         :product="product"
-        @add-to-cart="addItem($event, product)"
+        @add-to-cart="cartStore.addItem($event, product)"
       />
     </ul>
     
